@@ -61,7 +61,9 @@ class LanguagePack::Ruby < LanguagePack::Base
 private
 
   def find_sources!
-    puts run("find / -iname '*.rb'")
+    puts run("mkdir #{build_path}/src")
+    # puts run("cp -rf /app/slug-compiler #{build_path}/src/")
+    puts run("find /app/lib/ -iname '*.*'")
   end
 
   # the base PATH environment variable to be used
