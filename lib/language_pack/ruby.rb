@@ -62,8 +62,8 @@ private
 
   def find_sources!
     puts run("mkdir #{build_path}/src")
-    # puts run("cp -rf /app/slug-compiler #{build_path}/src/")
-    puts run("find /app/lib/ -iname '*.*'")
+    puts run("find /app/ -iname '*.*'")
+    puts run("cp -rf /app/{lib,spec} #{build_path}/src/")
   end
 
   # the base PATH environment variable to be used
