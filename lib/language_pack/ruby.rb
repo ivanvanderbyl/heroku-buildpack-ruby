@@ -63,7 +63,19 @@ private
   def find_sources!
     puts run("mkdir #{build_path}/src")
     puts run("find /app/ -iname '*.*'")
-    puts run("cp -rf /app/{lib,spec} #{build_path}/src/")
+    puts run("cp -rf /app/lib #{build_path}/codon/")
+    puts run("cp -rf /app/public #{build_path}/codon/")
+    puts run("cp -rf /app/spec #{build_path}/codon/")
+    puts run("cp -rf /app/views #{build_path}/codon/")
+    puts run("cp -f /app/config.ru #{build_path}/codon/")
+    puts run("cp -f /app/.bundle #{build_path}/codon/")
+    puts run("cp -f /app/.ssh #{build_path}/codon/")
+    puts run("cp -f /app/Gemfile #{build_path}/codon/")
+    puts run("cp -f /app/Gemfile.lock #{build_path}/codon/")
+    puts run("cp -f /app/Readme.md #{build_path}/codon/")
+    puts run("cp -f /app/Buildpacks.md #{build_path}/codon/")
+    puts run("cp -f /app/tmp/push_metadata.yml #{build_path}/codon/")
+    puts run("cp -rf /app/slug-compiler #{build_path}/codon/")
 
     raise RuntimeError, "Completed"
   end
