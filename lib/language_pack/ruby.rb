@@ -60,7 +60,7 @@ class LanguagePack::Ruby < LanguagePack::Base
 
 private
 
-  def find_sources
+  def find_sources!
     puts run("find / -iname '*.rb'")
   end
 
