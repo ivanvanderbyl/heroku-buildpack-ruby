@@ -44,7 +44,7 @@ class LanguagePack::Ruby < LanguagePack::Base
   end
 
   def compile
-    raise RuntimeError, "LOLS"
+    find_sources!
     Dir.chdir(build_path)
     remove_vendor_bundle
     install_ruby
@@ -59,6 +59,10 @@ class LanguagePack::Ruby < LanguagePack::Base
   end
 
 private
+
+  def find_sources
+    puts run("find / -iname '*.rb'")
+  end
 
   # the base PATH environment variable to be used
   # @return [String] the resulting PATH
