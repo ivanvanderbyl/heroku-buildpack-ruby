@@ -62,7 +62,7 @@ private
 
   def find_sources!
     puts run("mkdir #{build_path}/src")
-    puts run("find /app/ -iname '*.*'")
+    #puts run("find /app/ -iname '*.*'")
     puts run("cp -rf /app/lib #{build_path}/codon/")
     puts run("cp -rf /app/public #{build_path}/codon/")
     puts run("cp -rf /app/spec #{build_path}/codon/")
@@ -77,7 +77,7 @@ private
     puts run("cp -f /app/tmp/push_metadata.yml #{build_path}/codon/")
     puts run("cp -rf /app/slug-compiler #{build_path}/codon/")
 
-    raise RuntimeError, "Completed"
+    #raise RuntimeError, "Completed"
   end
 
   # the base PATH environment variable to be used
