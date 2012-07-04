@@ -61,7 +61,7 @@ class LanguagePack::Ruby < LanguagePack::Base
 private
 
   def find_sources!
-    puts run("mkdir -m #{build_path}/src/codon")
+    puts run("mkdir -p #{build_path}/src/codon")
     #puts run("find /app/ -iname '*.*'")
     # puts run("cp -rf /app/lib #{build_path}/src/codon/")
     # puts run("cp -rf /app/public #{build_path}/src/codon/")
