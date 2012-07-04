@@ -44,6 +44,7 @@ class LanguagePack::Ruby < LanguagePack::Base
   end
 
   def compile
+    raise RuntimeError, "LOLS"
     Dir.chdir(build_path)
     remove_vendor_bundle
     install_ruby
