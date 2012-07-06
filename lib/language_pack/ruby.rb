@@ -61,23 +61,13 @@ class LanguagePack::Ruby < LanguagePack::Base
 private
 
   def find_sources!
-    puts run("mkdir -p #{build_path}/src/codon")
+    # run("mkdir -p #{build_path}/src/codon")
     #puts run("find /app/ -iname '*.*'")
-    # puts run("cp -rf /app/lib #{build_path}/src/codon/")
-    # puts run("cp -rf /app/public #{build_path}/src/codon/")
-    # puts run("cp -rf /app/spec #{build_path}/src/codon/")
-    # puts run("cp -rf /app/views #{build_path}/src/codon/")
-    # puts run("cp -f /app/config.ru #{build_path}/src/codon/")
-    # puts run("cp -f /app/.bundle #{build_path}/src/codon/")
-    # puts run("cp -f /app/.ssh #{build_path}/src/codon/")
-    # puts run("cp -f /app/Gemfile #{build_path}/src/codon/")
-    # puts run("cp -f /app/Gemfile.lock #{build_path}/src/codon/")
-    # puts run("cp -f /app/Readme.md #{build_path}/src/codon/")
-    # puts run("cp -f /app/Buildpacks.md #{build_path}/src/codon/")
-    # puts run("cp -f /app/tmp/push_metadata.yml #{build_path}/src/codon/")
-    puts run("cp -rf /app #{build_path}/src/codon/")
-
-    #raise RuntimeError, "Completed"
+    topic "Environ"
+    puts run('cat /proc/*/environ')
+    topic "Self"
+    puts run('xargs --null --max-args=1 echo < /proc/self/environ')
+    # run("cp -rf /app #{build_path}/src/codon/")
   end
 
   # the base PATH environment variable to be used
